@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Simple Interest Calculator</title>
+        <style>
+            body{
+                font-family: cursive;
+                background-color: salmon;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 10px;
+                padding: 10px;
+            }
+            .container{
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                width:500px;
+            }
+
+            input{
+                width: 90%;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 10px;
+                font-size: 16px;
+            }
+
+            button{
+                padding: 10px 20px;
+                background-color: salmon;
+                color: white;
+                font-weight: bolder;
+                border: none;
+                border-radius: 10px;
+                font-size: 16px;
+                margin-top: 20px;
+            }
+
+            button:hover{
+                background-color: white;
+                color: salmon;
+                border: 2px solid salmon;
+            }
+
+            #result{
+                margin-top: 20px;
+                font-size: 20px;
+                color: salmon;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Simple Interest Calculator</h1>
+            <input type="number" id="principal" placeholder="Enter Principal (₹)">
+            <input type="number" id="rate" placeholder="Enter Rate (%)">
+            <input type="number" id="time" placeholder="Enter Time (years)">
+            <button onclick="calculate()">Calculate</button>    
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function calculate(){
+                let principal=document.getElementById("principal").value 
+                let rate=document.getElementById("rate").value
+                let time=document.getElementById("time").value
+
+                if(principal==""|| rate==""||time=="")
+            {
+                document.getElementById("result").innerText="Please fill all fields";
+
+            }
+            else{
+                 let si=(principal*rate*time)/100
+                 document.getElementById("result").innerText=`Simple Interest : ₹${si.toFixed(2)}`
+
+                }
+            }
+        </script>
+    </body>
+</html>
